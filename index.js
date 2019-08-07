@@ -842,7 +842,6 @@ const data = [
 ]
 
 const seed = (data) => {
-  Crypto.remove({})
   for (let i = 0; i < data.length; i += 1) {
     let name = data[i].name;
     let price = data[i].price;
