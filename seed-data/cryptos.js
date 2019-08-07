@@ -792,4 +792,4 @@ const seed = (data) => {
 }
 
 
-module.exports.seed = seed(data);
+//module.exports.seed = seed(data);
