@@ -851,7 +851,7 @@ const seed = (data) => {
       created_at: created_at,
       updated_at: updated_at
     })
-    crypto.save
+    crypto.save()
   }
 }
 
