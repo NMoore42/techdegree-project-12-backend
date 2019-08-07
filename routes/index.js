@@ -122,16 +122,6 @@ router.get('/cryptos', function(req, res, next) {
   })
 });
 
-//POST /cryptosnew
-router.post('/cryptosnew', function(req, res, next) {
-  const crypto = new Crypto(req.body);
-  crypto.save( (err, crypto) => {
-    if (err) return next(err);
-    res.status(201);
-    res.json(crypto);
-  });
-});
-
 
 ///////////////////////////////////////////
 /////////  TRANSACTION ROUTES  ///////////
