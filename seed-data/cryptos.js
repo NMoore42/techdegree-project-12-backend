@@ -1,4 +1,4 @@
-const Crypto = require('../models/crypto');
+
 
 const data = [
   {
