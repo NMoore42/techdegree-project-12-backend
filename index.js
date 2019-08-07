@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Mongoose connection
-mongoose.connect("mongodb://localhost:27017/cmc-api");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/cmc-api");
 const db = mongoose.connection;
 
 //Mongoose error
