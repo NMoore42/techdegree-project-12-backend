@@ -838,12 +838,12 @@ const data = [
 ]
 
 const seed = (data) => {
-  for (let obj in data) {
-    let name = obj.name;
-    let price = obj.price;
-    let ticker = obj.ticker;
-    let created_at = obj.created_at;
-    let updated_at = obj.updated_at;
+  for (let i = 0; i < data.length; i += 1) {
+    let name = data[i].name;
+    let price = data[i].price;
+    let ticker = data[i].ticker;
+    let created_at = data[i].created_at;
+    let updated_at = data[i].updated_at;
     let crypto = new Crypto({
       name: name,
       price: price,
