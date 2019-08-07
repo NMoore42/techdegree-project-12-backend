@@ -110,6 +110,7 @@ router.post('/articlesdelete', function(req, res, next) {
 /////////  CRYPTO ROUTES  ///////////
 ////////////////////////////////////
 
+//GET /cryptos
 router.get('/cryptos', function(req, res, next) {
   Crypto.find({}, (err, cryptos) => {
     if (err) {
@@ -119,6 +120,16 @@ router.get('/cryptos', function(req, res, next) {
       res.json(groupBy(cryptos, obj => obj.name))
     }
   })
+});
+
+//POST /cryptosnew
+router.post('/cryptosnew', function(req, res, next) {
+  const crypto = new Crypto(req.body);
+  crypto.save( (err, crypto) => {
+    if (err) return next(err);
+    res.status(201);
+    res.json(crypto);
+  });
 });
 
 

@@ -1,4 +1,6 @@
-[
+const Crypto = require('../models/crypto');
+
+const data = [
   {
     "_id": {
       "$oid": "57029ed4795118be119cc437"
@@ -770,3 +772,27 @@
     "__v": 0
   }
 ]
+
+function seed(data) {
+  for (let obj in data) {
+    let name = obj.name;
+    let price = obj.price;
+    let ticker = obj.ticker;
+    let created_at = obj.created_at;
+    let updated_at = obj.updated_at;
+    fetch("https://techdegree-project-12-backend.herokuapp.com/api/cryptosnew", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        price: price,
+        ticker: ticker,
+        created_at: created_at,
+        updated_at: updated_at
+      })
+    })
+  }
+}
