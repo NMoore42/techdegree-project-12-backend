@@ -1,6 +1,4 @@
-const Crypto = require('../models/crypto');
-
-const data = [
+[
   {
     "_id": {
       "$oid": "57029ed4795118be119cc437"
@@ -772,24 +770,3 @@ const data = [
     "__v": 0
   }
 ]
-
-const seed = (data) => {
-  for (let obj in data) {
-    let name = obj.name;
-    let price = obj.price;
-    let ticker = obj.ticker;
-    let created_at = obj.created_at;
-    let updated_at = obj.updated_at;
-    let crypto = new Crypto({
-      name: name,
-      price: price,
-      ticker: ticker,
-      created_at: created_at,
-      updated_at: updated_at
-    })
-    crypto.save
-  }
-}
-
-
-//module.exports.seed = seed(data);

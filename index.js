@@ -64,6 +64,8 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express server is listening on port ${server.address().port}`);
 });
 
+////////////////////////   SEEDs DATABASE WHILE RUNNING ON HEROKU //////////////////////////
+
 const data = [
   {
     "_id": {
