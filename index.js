@@ -64,7 +64,9 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express server is listening on port ${server.address().port}`);
 });
 
-////////////////////////   SEEDs DATABASE WHILE RUNNING ON HEROKU //////////////////////////
+////////////////////////   SEEDS DATABASE WHILE RUNNING ON HEROKU //////////////////////////
+
+
 
 const data = [
   {
@@ -840,6 +842,7 @@ const data = [
 ]
 
 const seed = (data) => {
+  Crypto.remove({})
   for (let i = 0; i < data.length; i += 1) {
     let name = data[i].name;
     let price = data[i].price;
