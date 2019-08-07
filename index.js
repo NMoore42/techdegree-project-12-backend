@@ -10,7 +10,7 @@ const cors = require('cors')
 const app = express();
 
 // set our port
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 
 // morgan gives us http request logging
 app.use(morgan('dev'));
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Mongoose connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/cmc-api");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/sandbox");
 const db = mongoose.connection;
 
 //Mongoose error
